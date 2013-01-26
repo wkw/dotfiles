@@ -1,0 +1,54 @@
+[user]
+	name = Wayne Walrath
+	email = wayne@evolvingmedia.net
+[alias]
+    co = checkout
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+    s = status --short -b
+    f = fetch
+    # Other useful aliases:
+    unstage = reset HEAD
+    staged = diff --cached
+    unstaged = diff
+    current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+    # Usage: git track origin/feature-123-login-form
+    track = checkout -t
+    # push a new branch to remote and track it. 
+    #usage: git pushtrack origin feature
+    pushtrack = push -u
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = auto
+[color "branch"]
+	current = green bold
+	local = green
+	remote = red bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red
+[core]
+	excludesfile = /Users/wkw/.gitignore_global
+	editor = bbedit -w
+#	editor = mate -w
+[difftool "sourcetree"]
+	cmd = /usr/bin/bbdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/ThirdParty/Subversion-SCM-GIT/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[push]
+	default = upstream
