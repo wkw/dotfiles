@@ -1,4 +1,5 @@
-# GIT shortcuts 
+# GIT shortcuts
+alias gitconf='more .git/config'
 alias gs='git status'
 alias gb='git branch'
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
