@@ -22,3 +22,22 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
 
 # diskwho: to show processes reading/writing to disk
 alias diskwho='sudo iotop'
+
+# fix web root perms
+#alias setperms='find .  -type d -exec sudo chmod g+s {} \; &&  sudo chmod -R g+w *'
+alias fixperms='sudo /root/fixperms.sh /srv/'
+
+# WORK Stuff
+alias srv='cd /srv/ && ls -al'
+
+
+# colorize tree command
+alias tree='tree -C '
+
+# add git completion and git-prompt
+if [ -f ~/.git-completion.sh ]; then
+    . ~/.git-completion.sh
+fi
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+fi
