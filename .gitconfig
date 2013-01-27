@@ -9,7 +9,10 @@
         #ignore untracked files ('Status TRacked')
     str = status --untracked-files=no
     f = fetch
-
+    #delete branch
+    dlb = branch -d
+    # force delete for unmerged branch
+    fdlb = branch -d
     # Other useful aliases:
     unstage = reset HEAD
     staged = diff --cached

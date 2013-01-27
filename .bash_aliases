@@ -1,14 +1,19 @@
-# GIT shortcuts
+# GIT shortcuts {{{
 alias gitconf='more .git/config'
 alias gs='git status'
 alias gb='git branch'
+alias gc='git commit '
+alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
+
 alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgit diff --name-status --color master..branch\n\tOr just gitdb branch1..branch2\n"'
 alias gitdb='git diff --stat --color'
 alias gdifforigin='echo use syntax: git diff --stat origin/master'
+#}}}
 
-# PHP shortcuts
+# PHP shortcuts {{{
 alias phpl='php -l '	# lint -- syntax check only
+# }}}
 
 # numFiles: number of (non-hidden) files in current directory
 alias numFiles='echo $(ls -1 | wc -l)'
