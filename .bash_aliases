@@ -29,6 +29,7 @@ alias fixperms='sudo /root/fixperms.sh /srv/'
 
 # WORK Stuff
 alias srv='cd /srv/ && ls -al'
+alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 
 
 # colorize tree command
@@ -41,3 +42,7 @@ fi
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi
+if [ -f ~/.local/bin/bashmarks.sh ]; then
+    source ~/.local/bin/bashmarks.sh
+fi
+
