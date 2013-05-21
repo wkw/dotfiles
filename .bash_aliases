@@ -10,6 +10,14 @@ alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgi
 alias gitdb='git diff --stat --color'
 alias gdifforigin='echo use syntax: git diff --stat origin/master'
 #}}}
+alias ll="ls -lah"
+alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
+alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
+
+#
+# simple http server
+#
+alias serveUp="python -m SimpleHTTPServer"
 
 # PHP shortcuts {{{
 alias phpl='php -l '	# lint -- syntax check only
@@ -21,6 +29,8 @@ alias numFiles='echo $(ls -1 | wc -l)'
 # showTimes: show the modification, metadata-change, and access times of a file
 showTimes () { stat -f "%N:   %m %c %a" "$@" ; }
 
+#diff two folders
+alias dirdiff='diff -arq '
 
 # to find CPU hogs
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
@@ -45,4 +55,7 @@ if [ -f ~/.git-completion.sh ]; then
 fi
 if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
+fi
+if [ -f ~/.local/bin/bashmarks.sh ]; then
+    source ~/.local/bin/bashmarks.sh
 fi
