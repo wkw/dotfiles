@@ -1,14 +1,27 @@
-# GIT shortcuts
+# GIT shortcuts {{{
 alias gitconf='more .git/config'
 alias gs='git status'
 alias gb='git branch'
+alias gc='git commit '
+alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
+
 alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgit diff --name-status --color master..branch\n\tOr just gitdb branch1..branch2\n"'
 alias gitdb='git diff --stat --color'
 alias gdifforigin='echo use syntax: git diff --stat origin/master'
+#}}}
+alias ll="ls -lah"
+alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
+alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
 
-# PHP shortcuts
+#
+# simple http server
+#
+alias serveUp="python -m SimpleHTTPServer"
+
+# PHP shortcuts {{{
 alias phpl='php -l '	# lint -- syntax check only
+# }}}
 
 # numFiles: number of (non-hidden) files in current directory
 alias numFiles='echo $(ls -1 | wc -l)'
@@ -16,6 +29,8 @@ alias numFiles='echo $(ls -1 | wc -l)'
 # showTimes: show the modification, metadata-change, and access times of a file
 showTimes () { stat -f "%N:   %m %c %a" "$@" ; }
 
+#diff two folders
+alias dirdiff='diff -arq '
 
 # to find CPU hogs
 alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -10'
@@ -45,4 +60,3 @@ fi
 if [ -f ~/.local/bin/bashmarks.sh ]; then
     source ~/.local/bin/bashmarks.sh
 fi
-

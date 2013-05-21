@@ -4,12 +4,18 @@
 [alias]
     co = checkout
     lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    # log-one-line-short (only show 20 commits)
+    lols = log --pretty=oneline --abbrev-commit --graph --decorate -n20
     l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
     s = status --short -b
         #ignore untracked files ('Status TRacked')
     str = status --untracked-files=no
+    alias = config --get-regexp alias
     f = fetch
-
+    #delete branch
+    dlb = branch -d
+    # force delete for unmerged branch
+    fdlb = branch -d
     # Other useful aliases:
     unstage = reset HEAD
     staged = diff --cached
