@@ -60,3 +60,5 @@ fi
 if [ -f ~/.local/bin/bashmarks.sh ]; then
     source ~/.local/bin/bashmarks.sh
 fi
+
+export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
