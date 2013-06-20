@@ -2,6 +2,8 @@
 alias gitconf='more .git/config'
 alias gs='git status'
 alias gb='git branch'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
 alias gp='git push'
 alias gau='git add -u'
 alias gaa='git add -A'
