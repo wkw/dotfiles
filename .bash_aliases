@@ -2,6 +2,11 @@
 alias gitconf='more .git/config'
 alias gs='git status'
 alias gb='git branch'
+alias gp='git push'
+alias gau='git add -u'
+alias gaa='git add -a'
+alias gref='git reflog'
+alias gco='git checkout'
 alias gc='git commit '
 alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
