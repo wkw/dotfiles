@@ -17,6 +17,8 @@ alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgi
 alias gitdb='git diff --stat --color'
 alias gdifforigin='echo use syntax: git diff --stat origin/master'
 #}}}
+alias gitaliases='alias | grep git'
+
 alias ll="ls -lah"
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
