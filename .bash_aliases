@@ -10,6 +10,8 @@ alias gaa='git add -A'
 alias gref='git reflog'
 alias gco='git checkout'
 alias gc='git commit '
+alias gcm='git commit -m'
+alias gcam='git commit -am'
 alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
 
@@ -22,6 +24,9 @@ alias gitaliases='alias | grep git'
 alias ll="ls -lah"
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
+
+#recursive grep
+alias grepr="grep -r "
 
 #
 # simple http server

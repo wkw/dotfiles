@@ -72,6 +72,10 @@
     rh1 = reset HEAD^ --hard
     rh2 = reset HEAD^^ --hard
 
+	#misc
+		# for alias.find, see: http://stackoverflow.com/a/16252013/161625
+	find = "!git log --color -p -S "
+
 [color]
 	diff = auto
 	status = auto
@@ -101,8 +105,8 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/ThirdParty/Subversion-SCM-GIT/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
+#[branch "master"]
+#	remote = origin
+#	merge = refs/heads/master
 [push]
 	default = upstream
