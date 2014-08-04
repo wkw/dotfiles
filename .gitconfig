@@ -7,6 +7,9 @@
     # log-one-line-short (only show 20 commits)
     lols = log --pretty=oneline --abbrev-commit --graph --decorate -n20
     l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+    # same as above, but no merges
+    lnm = log --no-merges --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+    lstat = log --stat -c --graph --decorate
     s = status --short -b
         #ignore untracked files ('Status TRacked')
     str = status --untracked-files=no
@@ -23,13 +26,13 @@
     current-branch = !git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
     # Usage: git track origin/feature-123-login-form
     track = checkout -t
-    # push a new branch to remote and track it. 
+    # push a new branch to remote and track it.
     #usage: git pushtrack origin feature
     pushtrack = push -u
 
     # see: http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
     #       and https://github.com/durdn/cfg/blob/master/.gitconfig
-    
+
     le = log --oneline --decorate
         #list showing changed files
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -39,16 +42,16 @@
     lc  = "!f() { git ll "$1"^.."$1"; }; f"
         #List with no colors to chain output
     lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-    
-    
+
+
     ai = add --interactive
     amend = commit --amend
-    
+
     #stash
     sl = stash list
     sa = stash apply
     ss = stash save
-    
+
     cp = cherry-pick
 
     #assume aliases
@@ -58,7 +61,7 @@
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
     #unassume all the assumed files
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
-    assumeall = "!git st -s | awk {'print $2'} | xargs git assume"    
+    assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 
     #merges
     ours = "!f() { git co --ours $@ && git add $@; }; f"
@@ -101,7 +104,7 @@
 #	editor = mate -w
 [difftool "sourcetree"]
 	cmd = /usr/bin/bbdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/ThirdParty/Subversion-SCM-GIT/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

@@ -25,6 +25,12 @@ alias ll="ls -lah"
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
 
+# set shell title. usage: rename_tab 'NEW NAME'
+rename_tab () {
+    TEXT=$1
+    export PROMPT_COMMAND='echo -ne "\033]0;${TEXT}\007"'
+}
+
 #recursive grep
 alias grepr="grep -r "
 
@@ -59,7 +65,7 @@ alias fixperms='sudo /root/fixperms.sh /srv/'
 # WORK Stuff
 alias srv='cd /srv/ && ls -al'
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
-
+alias moshit="echo 'ssh aws-wp after connect' && mosh charon"
 
 # colorize tree command
 alias tree='tree -C '
@@ -76,3 +82,6 @@ if [ -f ~/.local/bin/bashmarks.sh ]; then
 fi
 
 export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
+
+[[ -f ${HOME}/.emn-wp-engine/include.sh ]] && source ${HOME}/.emn-wp-engine/include.sh
+
