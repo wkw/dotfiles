@@ -60,7 +60,7 @@ alias diskwho='sudo iotop'
 
 # fix web root perms
 #alias setperms='find .  -type d -exec sudo chmod g+s {} \; &&  sudo chmod -R g+w *'
-alias fixperms='sudo /root/emn_bin/fixperms.sh /srv/'
+alias fixperms='sudo /root/emn_bin/fixperms.sh'
 
 # WORK Stuff
 alias srv='cd /srv/ && ls -al'
