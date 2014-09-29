@@ -14,6 +14,7 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
+alias gw='grunt watch'
 
 alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgit diff --name-status --color master..branch\n\tOr just gitdb branch1..branch2\n"'
 alias gitdb='git diff --stat --color'

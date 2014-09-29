@@ -101,10 +101,11 @@
 [core]
 	excludesfile = /Users/wkw/.gitignore_global
 	editor = bbedit -w
+	precomposeunicode = false
 #	editor = mate -w
 [difftool "sourcetree"]
 	cmd = /usr/bin/bbdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/ThirdParty/Subversion-SCM-GIT/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
