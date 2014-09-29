@@ -86,3 +86,14 @@ export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
 
 [[ -f ${HOME}/.emn-wp-engine/include.sh ]] && source ${HOME}/.emn-wp-engine/include.sh
 
+function theme() {
+  CURDIR=`basename "$PWD"`
+  #echo "$CURDIR"
+  if [ "$CURDIR" = 'site' ]; then
+    CURDIR="$(dirname "$PWD")"
+    CURDIR=`basename "$CURDIR"`
+  fi
+  #echo "$CURDIR"
+  cd "wp-content/themes/$CURDIR"
+  pwd
+}
