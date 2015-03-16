@@ -82,6 +82,12 @@ if [ -f ~/.local/bin/bashmarks.sh ]; then
     source ~/.local/bin/bashmarks.sh
 fi
 
+
+#hipchat
+if [ -f ~/.hipchat ]; then
+    source ~/.hipchat
+fi
+
 export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
 
 [[ -f ${HOME}/.emn-wp-engine/include.sh ]] && source ${HOME}/.emn-wp-engine/include.sh
@@ -97,3 +103,23 @@ function theme() {
   cd "wp-content/themes/$CURDIR"
   pwd
 }
+
+# bash completion for the `wp` command
+
+_wp_complete() {
+	local cur=${COMP_WORDS[COMP_CWORD]}
+
+	IFS=$'\n';  # want to preserve spaces at the end
+	local opts="$(wp cli completions --line="$COMP_LINE" --point="$COMP_POINT")"
+
+	if [[ "$opts" =~ \<file\>\s* ]]
+	then
+		COMPREPLY=( $(compgen -f -- $cur) )
+	elif [[ $opts = "" ]]
+	then
+		COMPREPLY=( $(compgen -f -- $cur) )
+	else
+		COMPREPLY=( ${opts[*]} )
+	fi
+}
+complete -o nospace -F _wp_complete wp
