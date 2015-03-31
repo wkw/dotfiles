@@ -106,7 +106,12 @@ function theme() {
     CURDIR=`basename "$CURDIR"`
   fi
   #echo "$CURDIR"
-  cd "wp-content/themes/$CURDIR"
+  if [ -d "wp-content/themes/$CURDIR" ]; then
+    cd "wp-content/themes/$CURDIR"
+  else
+    cd "web/app/themes/$CURDIR"
+  fi
+
   pwd
 }
 
