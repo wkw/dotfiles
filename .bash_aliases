@@ -26,6 +26,12 @@ alias ll="ls -lah"
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
 
+#vagrant
+alias vs="vagrant suspend"
+alias vup="vagrant up"
+alias vstat="vagrant status"
+alias vgstat="vagrant global-status"
+
 # set shell title. usage: rename_tab 'NEW NAME'
 rename_tab () {
     TEXT=$1
