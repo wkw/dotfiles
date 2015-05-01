@@ -142,9 +142,10 @@ complete -o nospace -F _wp_complete wp
 # usage: <your db export command> `dbname mydatabase`
 dbname() {
   NAME="$1"
+  DATE=`date +"%G%m%d_%H%M%S"`
   if [ -z "$NAME" ]
   then
     NAME="database_export"
   fi
-  echo "$date"_"$NAME".sql
+  echo "$DATE"_"$NAME".sql
 }
