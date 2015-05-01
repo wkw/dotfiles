@@ -12,7 +12,7 @@ alias gco='git checkout'
 alias gc='git commit '
 alias gcm='git commit -m'
 alias gcam='git commit -am'
-alias go='git checkout '
+#alias go='git checkout '
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
 alias gw='grunt watch'
 
@@ -134,3 +134,17 @@ _wp_complete() {
 	fi
 }
 complete -o nospace -F _wp_complete wp
+
+
+
+# format a filename with timestamp, for use in exporting sql databases
+# requires an argument -- the database name (or any string you want to use)
+# usage: <your db export command> `dbname mydatabase`
+dbname() {
+  NAME="$1"
+  if [ -z "$NAME" ]
+  then
+    NAME="database_export"
+  fi
+  echo "$date"_"$NAME".sql
+}
