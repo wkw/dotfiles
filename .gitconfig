@@ -101,7 +101,7 @@
 	untracked = red
 [core]
 	excludesfile = /Users/wkw/.gitignore_global
-	editor = bbedit -w
+	#editor = bbedit -w
 	precomposeunicode = false
 #	editor = mate -w
 [difftool "sourcetree"]
