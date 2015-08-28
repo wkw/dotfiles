@@ -44,6 +44,9 @@
         #List with no colors to chain output
     lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 
+    # http://stackoverflow.com/a/2363495/161625
+    # shows files which have been hit with update-index --assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
 
     ai = add --interactive
     amend = commit --amend
@@ -101,7 +104,7 @@
 	untracked = red
 [core]
 	excludesfile = /Users/wkw/.gitignore_global
-	#editor = bbedit -w
+	editor = bbedit -w
 	precomposeunicode = false
 #	editor = mate -w
 [difftool "sourcetree"]
