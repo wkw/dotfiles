@@ -26,6 +26,9 @@ alias ll="ls -lah"
 alias lbash=". ~/.bashrc&&echo '.bashrc has been reloaded'"	# re(load) bashrc
 alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | uniq -c | sort -n'
 
+# lint all files in current directory recursively
+alias phplint='find . -iname "*.php" -exec php -l {} \; | grep -i "Errors.parsing"'
+
 #vagrant
 alias vs="vagrant suspend"
 alias vup="vagrant up"
