@@ -31,7 +31,9 @@ alias phplint='find . -iname "*.php" -exec php -l {} \; | grep -i "Errors.parsin
 
 #vagrant
 alias vs="vagrant suspend"
+alias vsleep="vagrant suspend"
 alias vup="vagrant up"
+alias vdown="vagrant halt"
 alias vstat="vagrant status"
 alias vgstat="vagrant global-status"
 
