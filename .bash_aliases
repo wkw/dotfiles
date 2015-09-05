@@ -36,6 +36,7 @@ alias vup="vagrant up"
 alias vdown="vagrant halt"
 alias vstat="vagrant status"
 alias vgstat="vagrant global-status"
+alias vssh="vagrant ssh"
 
 # set shell title. usage: rename_tab 'NEW NAME'
 rename_tab () {
