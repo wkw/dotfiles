@@ -93,6 +93,10 @@ fi
 if [ -f ~/.local/bin/bashmarks.sh ]; then
     source ~/.local/bin/bashmarks.sh
 fi
+# wp-cli cmd completions
+if [ -f ~/.local/bin/wp-completion.bash ]; then
+    source ~/.local/bin/wp-completion.bash
+fi
 
 
 #hipchat
