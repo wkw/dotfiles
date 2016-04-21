@@ -1,6 +1,7 @@
 # GIT shortcuts {{{
 alias gitconf='more .git/config'
 alias gs='git status'
+alias gsn='git status -uno' # no untracked files
 alias gb='git branch'
 alias gbd='git branch -d'
 alias gbD='git branch -D'
@@ -9,6 +10,7 @@ alias gau='git add -u'
 alias gaa='git add -A'
 alias gref='git reflog'
 alias gco='git checkout'
+alias grv='git remote -v'
 alias gc='git commit '
 alias gcm='git commit -m'
 alias gcam='git commit -am'
@@ -37,6 +39,9 @@ alias vdown="vagrant halt"
 alias vstat="vagrant status"
 alias vgstat="vagrant global-status"
 alias vssh="vagrant ssh"
+
+# mac os
+alias rmdstore="find . -name '*.DS_Store' -type f -delete"
 
 # set shell title. usage: rename_tab 'NEW NAME'
 rename_tab () {
@@ -159,3 +164,9 @@ dbname() {
   fi
   echo "$DATE"_"$NAME".sql
 }
+
+# Experimental: trying out `z`  - https://github.com/rupa/z
+# alternative util: autojump - https://github.com/wting/autojump
+if [ -f ~/code/dotfiles/z/z.sh ]; then
+  ~/code/dotfiles/z/z.sh
+fi
