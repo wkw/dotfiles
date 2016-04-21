@@ -150,7 +150,19 @@ _wp_complete() {
 }
 complete -o nospace -F _wp_complete wp
 
-
+# set OS-appropriate settings
+if [ "$(uname)" == "Darwin" ]; then
+  export GIT_EDITOR='subl -n -w'
+  echo "setting git editor"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    # Do something under GNU/Linux platform
+    export GIT_EDITOR=vim
+    export VISUAL=vim
+    export EDITOR="$VISUAL"
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+    # Do something under Windows NT platform
+    echo "windows"
+fi
 
 # format a filename with timestamp, for use in exporting sql databases
 # requires an argument -- the database name (or any string you want to use)
