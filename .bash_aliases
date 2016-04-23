@@ -18,6 +18,7 @@ alias gcam='git commit -am'
 alias gl='git log --stat -c --graph --decorate' #show log w/ files included im commits
 alias gw='grunt watch'
 
+alias gd='git diff'
 alias gdiffbranch='printf "try:\n\tgit diff --stat --color  master..branch\n\tgit diff --name-status --color master..branch\n\tOr just gitdb branch1..branch2\n"'
 alias gitdb='git diff --stat --color'
 alias gdifforigin='echo use syntax: git diff --stat origin/master'
@@ -180,5 +181,5 @@ dbname() {
 # Experimental: trying out `z`  - https://github.com/rupa/z
 # alternative util: autojump - https://github.com/wting/autojump
 if [ -f ~/code/dotfiles/z/z.sh ]; then
-  ~/code/dotfiles/z/z.sh
+  source ~/code/dotfiles/z/z.sh
 fi
