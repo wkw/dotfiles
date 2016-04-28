@@ -181,5 +181,7 @@ dbname() {
 # Experimental: trying out `z`  - https://github.com/rupa/z
 # alternative util: autojump - https://github.com/wting/autojump
 if [ -f ~/code/dotfiles/z/z.sh ]; then
+  # map 'z' to 'j'
+  _Z_CMD=j
   source ~/code/dotfiles/z/z.sh
 fi
