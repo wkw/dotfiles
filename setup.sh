@@ -7,6 +7,7 @@ ln -s $DOTFILES_DIR/.git-completion.sh
 ln -s $DOTFILES_DIR/.git-prompt.sh
 ln -s $DOTFILES_DIR/.gitconfig
 ln -s $DOTFILES_DIR/.gitignore_global
+ln -s $DOTFILES_DIR/.docker-completion.sh
 mkdir -p "$INSTALL_DIR"
 ln -s "$DOTFILES_DIR/.local/bin/bashmarks.sh" "$INSTALL_DIR/"
 . ~/.bashrc

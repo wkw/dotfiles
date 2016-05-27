@@ -104,15 +104,13 @@ if [ -f ~/.local/bin/wp-completion.bash ]; then
     source ~/.local/bin/wp-completion.bash
 fi
 
-
-#hipchat
-if [ -f ~/.hipchat ]; then
-    source ~/.hipchat
-fi
+#docker
+alias dps='docker ps'
+alias dim='docker images'
 
 export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
 
-[[ -f ${HOME}/.emn-wp-engine/include.sh ]] && source ${HOME}/.emn-wp-engine/include.sh
+# [[ -f ${HOME}/.emn-wp-engine/include.sh ]] && source ${HOME}/.emn-wp-engine/include.sh
 
 function theme() {
   CURDIR=`basename "$PWD"`
@@ -184,4 +182,9 @@ if [ -f ~/code/dotfiles/z/z.sh ]; then
   # map 'z' to 'j'
   _Z_CMD=j
   source ~/code/dotfiles/z/z.sh
+fi
+
+# docker completions
+if [ -f ~/.docker-completion.sh ]; then
+  source ~/.docker-completion.sh
 fi
