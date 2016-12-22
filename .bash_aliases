@@ -32,7 +32,7 @@ alias 404='grep "HTTP/1.[01]\" 404" access_log | awk "{print \$7 } " | sort | un
 # lint all files in current directory recursively
 alias phplint='find . -iname "*.php" -exec php -l {} \; | grep -i "Errors.parsing"'
 
-#vagrant
+# vagrant
 alias vs="vagrant suspend"
 alias vsleep="vagrant suspend"
 alias vup="vagrant up"
@@ -40,6 +40,10 @@ alias vdown="vagrant halt"
 alias vstat="vagrant status"
 alias vgstat="vagrant global-status"
 alias vssh="vagrant ssh"
+
+# npm
+alias nls="npm ls -depth 0"
+alias nlsg="npm ls -g --depth=0"
 
 # mac os
 alias rmdstore="find . -name '*.DS_Store' -type f -delete"
@@ -107,6 +111,8 @@ fi
 #docker
 alias dps='docker ps'
 alias dim='docker images'
+alias dcip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dexit='docker exec -it'
 
 export PS1="[\u@\h \W\$(__git_ps1 ' (%s)')]\$ "
 
@@ -185,6 +191,11 @@ if [ -f ~/code/dotfiles/z/z.sh ]; then
 fi
 
 # docker completions
-if [ -f ~/.docker-completion.sh ]; then
-  source ~/.docker-completion.sh
-fi
+# if [ -f ~/.docker-completion.sh ]; then
+#   source ~/.docker-completion.sh
+# fi
+
+# React-Native Android development
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+alias adbtime='adb shell "date `date +%m%d%H%M%Y.%S`"'
