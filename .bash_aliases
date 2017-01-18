@@ -199,3 +199,19 @@ fi
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 alias adbtime='adb shell "date `date +%m%d%H%M%Y.%S`"'
+
+#
+# Yarn package manager
+#
+export PATH="$PATH:`yarn global bin`"
+# FaceBook's JS module package manager
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# Android Dev / React-Native
+export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_NDK=~/Library/Android/sdk/ndk-bundle
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_NDK}
+alias rn='react-native'
+
+# fastlane for mobile app distribution
+export PATH="$HOME/.fastlane/bin:$PATH"
