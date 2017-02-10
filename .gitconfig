@@ -1,5 +1,5 @@
 [user]
-	name = Wayne K. Walrath
+	name = Wayne Walrath
 	email = wayne@evolvingmedia.net
 [alias]
     co = checkout
@@ -123,3 +123,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[commit]
+	template = /Users/wkw/.stCommitMsg

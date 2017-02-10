@@ -195,10 +195,10 @@ fi
 #   source ~/.docker-completion.sh
 # fi
 
-# React-Native Android development
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
 alias adbtime='adb shell "date `date +%m%d%H%M%Y.%S`"'
+
+[[ -s /Users/wkw/.nvm/nvm.sh ]] && . /Users/wkw/.nvm/nvm.sh # This loads NVM
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
 #
 # Yarn package manager
@@ -206,6 +206,7 @@ alias adbtime='adb shell "date `date +%m%d%H%M%Y.%S`"'
 export PATH="$PATH:`yarn global bin`"
 # FaceBook's JS module package manager
 export PATH="$HOME/.yarn/bin:$PATH"
+
 
 # Android Dev / React-Native
 export ANDROID_HOME=~/Library/Android/sdk
